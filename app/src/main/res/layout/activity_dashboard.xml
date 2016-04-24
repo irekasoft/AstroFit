@@ -8,33 +8,37 @@
   tools:context="com.irekasoft.astrofit.DashboardActivity"
   android:background="#000000"
   android:id="@+id/t">
-  
+  <Chronometer android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/chrono"
+               android:visibility="gone"/>
   <com.irekasoft.astrofit.CircularView
     android:layout_width="100dp"
     android:layout_height="100dp"
     android:layout_alignTop="@+id/chart"
-    android:layout_toEndOf="@+id/textView3"
     android:layout_marginTop="86dp"
     android:id="@+id/view"/>
+
 
   <com.github.mikephil.charting.charts.PieChart
     android:id="@+id/chart"
     android:layout_width="300dp"
     android:layout_height="300dp"
-    android:layout_above="@+id/textView2"
-    android:layout_toEndOf="@+id/textView2"/>
+    android:layout_above="@+id/countUp"
+    android:layout_toEndOf="@+id/countUp"/>
 
   <Button
     android:layout_width="500dp"
     android:layout_height="100dp"
     android:text="START ACTIVITY"
-    android:id="@+id/button3"
+    android:id="@+id/btn_start"
     android:background="#9ecd23"
     android:layout_marginBottom="37dp"
     android:layout_marginStart="62dp"
     android:layout_alignParentBottom="true"
     android:layout_alignParentStart="true"
-    android:textSize="40dp"/>
+    android:textSize="40dp"
+    android:onClick="start"/>
 
   <Button
     android:layout_width="500dp"
@@ -42,34 +46,30 @@
     android:text="STOP ACTIVITY"
     android:id="@+id/button4"
     android:background="#ff4545"
-    android:layout_alignTop="@+id/button3"
+    android:layout_alignTop="@+id/btn_start"
     android:layout_alignParentEnd="true"
     android:layout_marginEnd="36dp"
-    android:textSize="40dp"/>
+    android:textSize="40dp"
+    android:onClick="stop"/>
 
   <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="00:00:00"
-    android:id="@+id/textView2"
+    android:text="00:00"
+    android:id="@+id/countUp"
     android:textSize="100dp"
     android:layout_marginBottom="37dp"
-    android:layout_above="@+id/button3"
+    android:layout_above="@+id/btn_start"
     android:layout_centerHorizontal="true"
     android:textColor="#ffffff"/>
 
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="00:00:00"
-    android:id="@+id/textView3"
-    android:textSize="30dp"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentStart="true"
-    android:layout_marginStart="90dp"
-    android:layout_marginTop="40dp"
-    android:textColor="#ffffff"/>
+  <ImageView
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:id="@+id/imageView"
+    android:src="@drawable/astro"
+    android:layout_below="@+id/chrono"
+    android:layout_toEndOf="@+id/chart"/>
 
 </RelativeLayout>
